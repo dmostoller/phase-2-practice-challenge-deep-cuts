@@ -1,16 +1,17 @@
-import React from 'react'
+import React from 'react';
 
-function Search() {
+function Search({searchQuery, onSearch}) {
   return (
     <div className="search">
         <input
           type="text"
+          value={searchQuery}
           placeholder="Search your Tracks"
-          onChange={() => console.log("Searching...")}
+          onChange={(e) => onSearch(e.target.value)}
         />
         <i>🔎</i>
   </div>
-  )
+  );
 }
 
-export default Search
+export default Search;
